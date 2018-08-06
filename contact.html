@@ -1,0 +1,191 @@
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Contact</title>
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <style>
+      a.tabbtn.active {
+        color: #fff !important;
+      }
+      a.tabbtn {
+        color: #ccc !important;
+      }
+    </style>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        el = document.getElementById('tabs-ul')
+        instance = M.Tabs.init(el, {constrainWidth: false});
+        
+        elems = document.querySelectorAll('.dropdown-trigger');
+        instances = M.Dropdown.init(elems, {});
+      });
+      activeSearch = () => {
+        search = document.getElementById('search')
+        search.focus()
+      }
+      deactiveSearch = () => {
+        search = document.getElementById('search')
+        search.value = ""
+      }
+    </script>
+    <div>
+      <!--new mail btn-->
+      <a class="btn-floating btn-large waves-effect waves-light blue darken-3"
+        style='position: fixed;bottom: 25;right: 25;'><i class="material-icons">person_add</i></a>
+
+      <!--header-->
+      <nav class="blue darken-3">
+        <div class="nav-wrapper">
+          <ul class="row">
+            <a class="brand-logo left col">連絡先</a>
+            <div class="input-field col">
+              <input id="search" class="right" type="search" required>
+              <label id='searchbtn' class="label-icon" style="position: absolute;right: 25">
+                <i class="material-icons right waves-effect" onclick="activeSearch()">search</i>
+              </label>
+              <i id='desearch' class="" onclick="deactiveSearch()">close</i>
+            </div>
+            <i class="col material-icons dropdown-trigger" data-target="menu">more_vert</i>
+            <ul id='menu' class='dropdown-content'>
+              <li><a href="#!" class="black-text">表示する連絡先</a></li>
+              <li><a href="#!" class="black-text">インポート／エクスポート</a></li>
+              <li><a href="#!" class="black-text">グループ</a></li>
+              <li><a href="#!" class="black-text">ブロックした番号</a></li>
+              <li><a href="#!" class="black-text">アカウントを管理</a></li>
+              <li><a href="#!" class="black-text">設定</a></li>
+            </ul>
+          </ul>
+        </div>
+      </nav>
+      <!--tabs header-->
+      <div class="row">
+        <div class="col s12" style="padding: 0px;">
+          <ul class="tabs" id='tabs-ul'>
+            <li class="tab col s6 blue darken-3 waves-effect"><a class="tabbtn" href="#star">お気に入り</a></li>
+            <li class="tab col s6 blue darken-3 waves-effect"><a class="active tabbtn" href="#all">すべて（８８５）</a></li>
+          </ul>
+        </div>
+        <!--tab1-->
+        <div id="star" class="col s12">
+          <br/>
+          <br/>
+          <div class="row center grey-text"><i class="material-icons large">star</i></div>
+          <div class="center row grey-text">お気に入りはありません</div>
+        </div>
+        <!--tab2-->
+        <div id="all" class="col s12">
+          <h6 class="col s2">自分</h6><h6 class="col s10">プロファイルを設定</h6>
+
+          <div class="col s12" style="padding-bottom: 12px;">
+            <h6 class="col s2">B</h6>
+            <div class="col s10 valign-wrapper">
+              <div class="left btn-floating">
+                <div class="center">B</div>
+              </div>
+              <div class="col">Balance</div>
+            </div>
+          </div>
+
+          <div class="col s12" style="padding-bottom: 12px;">
+            <h6 class="col s2">C</h6>
+            <div class="col s10 valign-wrapper">
+              <div class="left btn-floating">
+                <div class="center orange">C</div>
+              </div>
+              <div class="col">CallCenter</div>
+            </div>
+          </div>
+
+          <div class="col s12" style="padding-bottom: 12px;">
+            <h6 class="col s2"></h6>
+            <div class="col s10 valign-wrapper">
+              <div class="left btn-floating">
+                <div class="center red">C</div>
+              </div>
+              <div class="col">ChangePro</div>
+            </div>
+          </div>
+
+          <div class="col s12" style="padding-bottom: 12px;">
+            <h6 class="col s2"></h6>
+            <div class="col s10 valign-wrapper">
+              <div class="left btn-floating">
+                <div class="center green">C</div>
+              </div>
+              <div class="col">Check Pro</div>
+            </div>
+          </div>
+
+          <div class="col s12" style="padding-bottom: 12px;">
+            <h6 class="col s2">D</h6>
+            <div class="col s10 valign-wrapper">
+              <div class="left btn-floating">
+                <div class="center black">D</div>
+              </div>
+              <div class="col">Donatello</div>
+            </div>
+          </div>
+
+          <div class="col s12" style="padding-bottom: 12px;">
+            <h6 class="col s2"></h6>
+            <div class="col s10 valign-wrapper">
+              <div class="left btn-floating">
+                <div class="center brown">D</div>
+              </div>
+              <div class="col">D</div>
+            </div>
+          </div>
+
+          <div class="col s12" style="padding-bottom: 12px;">
+            <h6 class="col s2">E</h6>
+            <div class="col s10 valign-wrapper">
+              <div class="left btn-floating">
+                <div class="center grey">E</div>
+              </div>
+              <div class="col">Elysium</div>
+            </div>
+          </div>
+
+          <div class="col s12" style="padding-bottom: 12px;">
+            <h6 class="col s2"></h6>
+            <div class="col s10 valign-wrapper">
+              <div class="left btn-floating">
+                <div class="center yellow">E</div>
+              </div>
+              <div class="col">Endymion</div>
+            </div>
+          </div>
+
+          <div class="col s12" style="padding-bottom: 12px;">
+            <h6 class="col s2"></h6>
+            <div class="col s10 valign-wrapper">
+              <div class="left btn-floating">
+                <div class="center cyan">E</div>
+              </div>
+              <div class="col">Electro Fantasy</div>
+            </div>
+          </div>
+
+          <div class="col s12" style="padding-bottom: 12px;">
+            <h6 class="col s2"></h6>
+            <div class="col s10 valign-wrapper">
+              <div class="left btn-floating">
+                <div class="center pink">E</div>
+              </div>
+              <div class="col">Enhanced Reality</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
