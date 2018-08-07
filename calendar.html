@@ -1,0 +1,290 @@
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Calendar</title>
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <style>
+      .date-row{
+        margin-bottom: 0px !important;
+      }
+      .date-pan{
+        flex:1;
+        border-color: #ccc;
+        border-style: solid;
+        border-width: 0.05px;
+        height: 17vh;
+        padding-top: 9px !important;
+      }
+      .disabled{
+        background-color: #ddd;
+        color: #999;
+      }
+      .right-text{
+        position: absolute;
+        right: 1px;
+      }
+    </style>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        
+        elems = document.querySelectorAll('.dropdown-trigger');
+        instances = M.Dropdown.init(elems, {});
+      });
+      activeSearch = () => {
+        search = document.getElementById('search')
+        search.focus()
+      }
+      deactiveSearch = () => {
+        search = document.getElementById('search')
+        search.value = ""
+      }
+    </script>
+    <div>
+      <!--header-->
+      <div style="position: fixed; width: 100%;">
+        <nav class="red">
+          <div class="nav-wrapper">
+            <ul class="row">
+              <div class="dropdown-trigger left col" data-target="datepick">
+                <div class="col">２０１８年８月</div>
+                <i class="material-icons col">arrow_drop_down</i>
+              </div>
+              <ul id='datepick' class='dropdown-content'>
+                <li class="row valign-wrapper">
+                  <a href="#!" class="col black-text">日</a>
+                  <a href="#!" class="col black-text right-text">８月７日</a>
+                </li>
+                <li class="row valign-wrapper">
+                  <a href="#!" class="col black-text">週</a>
+                  <a href="#!" class="col black-text right-text">８月５日〜１１日</a>
+                </li>
+                <li class="row valign-wrapper">
+                  <a href="#!" class="col black-text">月</a>
+                  <a href="#!" class="col black-text right-text">８月</a>
+                </li>
+                <li class="row valign-wrapper">
+                  <a href="#!" class="col black-text">予定リスト</a>
+                  <a href="#!" class="col black-text right-text">８月７日</a>
+                </li>
+              </ul>
+              <i class="col material-icons dropdown-trigger right" style="margin-left: 0px;" data-target="menu">more_vert</i>
+              <i class="col material-icons right">looks_6</i>
+              <ul id='menu' class='dropdown-content'>
+                <li><a href="#!" class="black-text">予定を作成</a></li>
+                <li><a href="#!" class="black-text">更新</a></li>
+                <li><a href="#!" class="black-text">検索</a></li>
+                <li><a href="#!" class="black-text">表示するカレンダー</a></li>
+                <li><a href="#!" class="black-text">予定を消除</a></li>
+                <li><a href="#!" class="black-text">移動</a></li>
+                <li><a href="#!" class="black-text">設定</a></li>
+              </ul>
+            </ul>
+          </div>
+        </nav>
+        <!--weekday header-->
+        <div class="row white" style="display: flex; flex-direction: row;">
+          <div class="col right-align red-text" style="flex:1;">
+            日
+          </div>
+          <div class="col right-align" style="flex:1;">
+            月
+          </div>
+          <div class="col right-align" style="flex:1;">
+            火
+          </div>
+          <div class="col right-align" style="flex:1;">
+            水
+          </div>
+          <div class="col right-align" style="flex:1;">
+            木
+          </div>
+          <div class="col right-align" style="flex:1;">
+            金
+          </div>
+          <div class="col right-align" style="flex:1;">
+            土
+          </div>
+        </div>
+      </div>
+      <!--calendar body-->
+      <div class="row">
+        <!--days-->
+        <div class="row date-row" style="display: flex; flex-direction: row;">
+          <div class="col right-align date-pan disabled">
+            22
+          </div>
+          <div class="col right-align date-pan disabled">
+            23
+          </div>
+          <div class="col right-align date-pan disabled">
+            24
+          </div>
+          <div class="col right-align date-pan disabled">
+            25
+          </div>
+          <div class="col right-align date-pan disabled">
+            26
+          </div>
+          <div class="col right-align date-pan disabled">
+            27
+          </div>
+          <div class="col right-align date-pan disabled">
+            28
+          </div>
+        </div>
+
+        <div class="row date-row" style="display: flex; flex-direction: row;">
+          <div class="col right-align date-pan disabled">
+            29
+          </div>
+          <div class="col right-align date-pan disabled">
+            30
+          </div>
+          <div class="col right-align date-pan disabled">
+            31
+          </div>
+          <div class="col right-align date-pan">
+            1
+          </div>
+          <div class="col right-align date-pan">
+            2
+          </div>
+          <div class="col right-align date-pan">
+            3
+          </div>
+          <div class="col right-align date-pan">
+            4
+          </div>
+        </div>
+
+        <div class="row date-row" style="display: flex; flex-direction: row;">
+          <div class="col right-align date-pan">
+            5
+          </div>
+          <div class="col right-align date-pan">
+            6
+          </div>
+          <div class="col right-align date-pan">
+            7
+          </div>
+          <div class="col right-align date-pan">
+            8
+          </div>
+          <div class="col right-align date-pan">
+            9
+          </div>
+          <div class="col right-align date-pan">
+            10
+          </div>
+          <div class="col right-align date-pan">
+            11
+          </div>
+        </div>
+
+        <div class="row date-row" style="display: flex; flex-direction: row;">
+          <div class="col right-align date-pan">
+            12
+          </div>
+          <div class="col right-align date-pan">
+            13
+          </div>
+          <div class="col right-align date-pan">
+            14
+          </div>
+          <div class="col right-align date-pan">
+            15
+          </div>
+          <div class="col right-align date-pan">
+            16
+          </div>
+          <div class="col right-align date-pan">
+            17
+          </div>
+          <div class="col right-align date-pan">
+            18
+          </div>
+        </div>
+
+        <div class="row date-row" style="display: flex; flex-direction: row;">
+          <div class="col right-align date-pan">
+            19
+          </div>
+          <div class="col right-align date-pan">
+            20
+          </div>
+          <div class="col right-align date-pan">
+            21
+          </div>
+          <div class="col right-align date-pan">
+            22
+          </div>
+          <div class="col right-align date-pan">
+            23
+          </div>
+          <div class="col right-align date-pan">
+            24
+          </div>
+          <div class="col right-align date-pan">
+            25
+          </div>
+        </div>
+
+        <div class="row date-row" style="display: flex; flex-direction: row;">
+          <div class="col right-align date-pan">
+            26
+          </div>
+          <div class="col right-align date-pan">
+            27
+          </div>
+          <div class="col right-align date-pan">
+            28
+          </div>
+          <div class="col right-align date-pan">
+            29
+          </div>
+          <div class="col right-align date-pan">
+            30
+          </div>
+          <div class="col right-align date-pan">
+            31
+          </div>
+          <div class="col right-align date-pan disabled">
+            1
+          </div>
+        </div>
+
+        <div class="row date-row" style="display: flex; flex-direction: row;">
+          <div class="col right-align date-pan disabled">
+            2
+          </div>
+          <div class="col right-align date-pan disabled">
+            3
+          </div>
+          <div class="col right-align date-pan disabled">
+            4
+          </div>
+          <div class="col right-align date-pan disabled">
+            5
+          </div>
+          <div class="col right-align date-pan disabled">
+            6
+          </div>
+          <div class="col right-align date-pan disabled">
+            7
+          </div>
+          <div class="col right-align date-pan disabled">
+            8
+          </div>
+        </div>
+
+    </div>
+  </body>
+</html>
